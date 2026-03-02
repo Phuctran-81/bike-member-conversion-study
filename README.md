@@ -10,14 +10,16 @@ Analyzed 4.3M+ records of historical trip data to identify behavioral patterns d
 **Duration Insights:** Casual riders averaged significantly higher trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
 **Seasonality:** Detected a sharp volume drop during winter, identifying a churn risk period.
 ### Recommendations: 
-Delivered 3 actionable growth: \
-- **"Weekend-Warrior" Membership:** This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.\
-- **Hyper-Local Marketing:** Geographic-targeted digital signage at the Top 10 high-volume casual stations.\
+Delivered 3 actionable growth: 
+- **"Weekend-Warrior" Membership:** This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
+- **Hyper-Local Marketing:** Geographic-targeted digital signage at the Top 10 high-volume casual stations.
 - **Incentive-Based Digital Alerts:** Utilize the mobile app to trigger "Smart Alerts". If a casual rider exceeds a certain duration (e.g., 45 minutes), send a notification showing how much they would have saved on that specific trip with a membership.
-## II. The deep dive
-This project followed by the six stage of analysis process\
+## II. Analytical Framework: A 6-Stage Deep Dive
+This project followed by the six stage of analysis process.
 ### **1. Ask**
-   Business Object: Identify behavioral differences between casual riders "Customer" and members "Subscriber" to convert Customer to Subscriber.
+   The primary objective is to analyze historical bike trip data to identify specific behavioral triggers and trends that distinguish “Customer” riders from “Subscriber” riders. By understanding these usage patterns, the marketing team aims to develop strategies to convert “Customer” riders into long-term members.
+#### Key Stakeholders: Head of Marketing.
+
 ### **2. Prepare**
 #### **Data Sourcing:** 
 Utilized 5 quarterly datasets (2019 q1 - 2020 q1) totaling 4.3M+ rows.
@@ -49,7 +51,7 @@ New derived columns were created to unlock deeper insights into rider behavior:
 #### **B. Silver to Gold:**
 Consolidate multiple datasets into a unified structure for longitudinal analysis. Integrating the 2019 and 2020 datasets to use easily.
   - Performed a UNION ALL transformation to merge the quaterly tables into a single source of truth: gold.unified_divvy_trips.
-  - Assigned NULL values to missing demographic fields (gender, birth_year, bikeid) in 2020 data to prevent statistical skew.
+  - Assigned NULL values to missing demographic fields (gender, birth_year, bikeid) in 2020 data to preserve the integrity of the 2019 demographic data.
 ##### Data Schema Diagram
 <img width="1772" height="784" alt="Data Schema Diagram drawio" src="https://github.com/user-attachments/assets/14036459-3e59-4232-b665-e5bc124a8952" />
 
