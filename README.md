@@ -52,8 +52,9 @@ New derived columns were created to unlock deeper insights into rider behavior:
 Consolidate multiple datasets into a unified structure for longitudinal analysis. Integrating the 2019 and 2020 datasets to use easily.
   - Performed a UNION ALL transformation to merge the quaterly tables into a single source of truth: gold.unified_divvy_trips.
   - Assigned NULL values to missing demographic fields (gender, birth_year, bikeid) in 2020 data to preserve the integrity of the 2019 demographic data.
-##### Data Schema Diagram
-<img width="1772" height="784" alt="Data Schema Diagram drawio" src="https://github.com/user-attachments/assets/14036459-3e59-4232-b665-e5bc124a8952" />
+#### End-to-End Data Pipeline & Transformation Map
+<img width="3884" height="2546" alt="Data Flow Diagram" src="https://github.com/user-attachments/assets/610a7bb1-45f1-4fc7-8db7-8e44f760e533" />
+
 
 ### 4. Analyze & Share (Data Exploration and Visualization )
 #### Key Findings & Visualization:
