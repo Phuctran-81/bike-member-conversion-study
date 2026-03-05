@@ -75,7 +75,7 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
 ## III. Datasets and Tools used:
 - Download full dataset (100MB) at [Datasets](https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
 - Database: SQL Server Management Studio 21.
-- Visualization: [Tableau]
+- Data visualization: See dashboard at [Tableau](https://public.tableau.com/views/Book1_17726930626510/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 
 
