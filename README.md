@@ -1,15 +1,15 @@
 # Behavioral Analysis & Strategic Growth: Cyclistic Member Conversion
 ## I. Overall
-### **Problem:** 
+### 1. Problem:
 Analyzed 4.3M+ records of historical trip data to identify behavioral patterns distinguishing casual riders from annual members. The goal was to provide data-driven recommendations to convert casual users ("Customer") into long-term users ("Subscriber").
-### **Action:**
+### 2. Action:
 **Data Engineering:** Architected a three-tier Medallion Warehouse (Bronze/Silver/Gold) in MS SQL Server to manage data ingestion, cleaning, and unification.\
 **Analytics & BI:** Engineered interactive Tableau dashboards to identify seasonal trends, peak usage windows, and user clusters.
-### **Result:**
+### 3. Results:
 **Usage Patterns:** Identified that Subscribers dominate weekday commute peaks (6–9 AM/4–6 PM), while casual riders spike on weekends, suggesting a shift from utility to recreation.\
 **Duration Insights:** Casual riders averaged significantly higher trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
 **Seasonality:** Detected a sharp volume drop during winter, identifying a churn risk period.
-### Recommendations: 
+### 4. Recommendations: 
 Delivered 3 actionable growth: 
 - **"Weekend-Warrior" Membership:** This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
 - **Hyper-Local Marketing:** Geographic-targeted digital signage at the Top 10 high-volume casual stations.
@@ -74,9 +74,9 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
 - **Seasonal/Weekend Membership Tiers:** Introduce a "Summer-Only" or "Weekend-Warrior" membership. This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
 - **Incentive-Based Digital Alerts:** Utilize the mobile app to trigger "Smart Alerts". If a casual rider exceeds a certain duration (e.g., 45 minutes), send a notification showing how much they would have saved on that specific trip with a membership.
 ## III. Datasets and Tools used:
-- Download full dataset (100MB) at [Datasets](https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
-- Database: SQL Server Management Studio 21.
-- Data visualization: See dashboard at [Tableau](https://public.tableau.com/views/Book1_17726930626510/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+- **Datasets:** Download full dataset (100MB) at [Datasets](https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
+- **Database:** SQL Server Management Studio 21.
+- **Data visualization:** Access the dashboard at [Tableau Public](https://public.tableau.com/views/Book1_17726930626510/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 
 
