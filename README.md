@@ -72,8 +72,8 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
 - **Targeted Geographic Marketing:** Focus efforts exclusively on the Top 10 stations most frequently by “Customer” riders. Install digital signage at these locations on weekends offering “First Month Free” trial.
 - **Seasonal/Weekend Membership Tiers:** Introduce a "Summer-Only" or "Weekend-Warrior" membership. This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
 - **Incentive-Based Digital Alerts:** Utilize the mobile app to trigger "Smart Alerts". If a casual rider exceeds a certain duration (e.g., 45 minutes), send a notification showing how much they would have saved on that specific trip with a membership.
-
-
+## III. Dataset
+Download full dataset (100MB) from My [latest release] (https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
   
 
 
