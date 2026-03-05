@@ -6,16 +6,16 @@ Analyzed 4.3M+ records of historical trip data to identify behavioral patterns d
 **Data Engineering:** Architected a three-tier Medallion Warehouse (Bronze/Silver/Gold) in MS SQL Server to manage data ingestion, cleaning, and unification.\
 **Analytics & BI:** Engineered interactive Tableau dashboards to identify seasonal trends, peak usage windows, and user clusters.
 ### 3. Results:
-**Usage Patterns:** Identified that Subscribers dominate weekday commute peaks (6–9 AM/4–6 PM), while casual riders spike on weekends, suggesting a shift from utility to recreation.\
-**Duration Insights:** Casual riders averaged significantly higher trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
-**Seasonality:** Detected a sharp volume drop during winter, identifying a churn risk period.
+**Usage Patterns:** Identified that Subscribers dominate weekday commute peaks (6–9 AM/4–6 PM), while casual riders spike on weekends, this indicates that "Subscriber" riders use the service for utility purpose, while "Customer" riders use the service for recreation purpose. \
+**Duration Insights:** "Customer" riders have significantly longer average trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
+**Seasonality:** Detected a sharp volume drop during winter, suggesting the weather affects the demand for services.
 ### 4. Recommendations: 
 Delivered 3 actionable growth: 
 - **"Weekend-Warrior" Membership:** This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
 - **Hyper-Local Marketing:** Geographic-targeted digital signage at the Top 10 high-volume casual stations.
 - **Incentive-Based Digital Alerts:** Utilize the mobile app to trigger "Smart Alerts". If a casual rider exceeds a certain duration (e.g., 45 minutes), send a notification showing how much they would have saved on that specific trip with a membership.
 ## II. Analytical Framework: A 6-Stage Deep Dive
-This project followed by the six stage of analysis process.
+This project followed by the six stage of analysis process (ask, prepare, process, analyze, share and act).
 ### **1. Ask**
    The primary objective is to analyze historical bike trip data to identify specific behavioral triggers and trends that distinguish “Customer” riders from “Subscriber” riders. By understanding these usage patterns, the marketing team aims to develop strategies to convert “Customer” riders into long-term members.
 #### Key Stakeholders: Head of Marketing.
@@ -25,22 +25,21 @@ This project followed by the six stage of analysis process.
 Utilized 5 quarterly datasets (2019 q1 - 2020 q1) totaling 4.3M+ rows.
 #### **Data Storage:** 
 A tiered strategy in MS SQL Server was used to ensure integrity:
-- Bronze Layer: House immutable raw CSV imports as a “Single Source of Truth”.
+- Bronze Layer: Contains immutable raw CSV imports as a “Single Source of Truth”.
 - Silver Layer: Contains processed datasets (remove duplicate, error data, add new column ….)
 - Gold Layer: Contains cleaned, validated and unified dataset for staged analysis\
 **Data Flow Diagram**\
-  <img width="801" height="441" alt="Data Flow Diagram drawio" src="https://github.com/user-attachments/assets/9bbc8bc7-fa7a-425f-8196-1a4338f5649a" /> \
-**Check Data integrity**\
+  <img width="801" height="441" alt="Data Flow Diagram drawio" src="https://github.com/user-attachments/assets/9bbc8bc7-fa7a-425f-8196-1a4338f5649a" /> 
+
 ### **3. Process (Data Engineering & Cleaning)**
 #### **A. Bronze to Silver:**
   Data was transformated to silver layer after it was processed. The activities processed data: 
 ##### **Data Standardization & Schema Alignment**
-  - Categorical Synchronization: Updated user_type labels in the 2020_q1 table to matcha the naming conventions of the 2019 datasets.
+  - Categorical Synchronization: Updated user_type labels in the 2020_q1 table to synchronize with the label of the 2019 datasets.
   - Geospatial Enrichment: Created a dim_station table from divvy_trips_2020_q1 table to facilitate for backfilling missing geospatial coordinates in 2019 table to support future route and mapping analysis.
-  - Key Management: Generated a new Primary Key column based on temporal ordering, this synchronizes data type because the original primary key has INT type in 2019 dataset and VARCHAR type in 2020_Q1.
-##### Feature Engineering
+##### Data Enrichment
 New derived columns were created to unlock deeper insights into rider behavior:
-- Temporal Features: Extracted hour_started, hour_ended, and day_of_week to enable peak-usage and seasonality analysis.
+- Temporal Features: Extracted start_hour, end_hour, and weekday_of_start_date to enable peak-usage.
 - Unit conversion: Calculated a new trip_duration_minutes column. This resolved a formatting issue where the original seconds column commas (thousand separators), which interfered with numerical calculations.
 ##### Data Integrity & Noise Reduction
   I performed a targeted ‘pruning’ of the data to remove records that did not represent valid trips:
@@ -51,21 +50,21 @@ New derived columns were created to unlock deeper insights into rider behavior:
 #### **B. Silver to Gold:**
 Consolidate multiple datasets into a unified structure for longitudinal analysis. Integrating the 2019 and 2020 datasets to use easily.
   - Performed a UNION ALL transformation to merge the quaterly tables into a single source of truth: gold.unified_divvy_trips.
-  - Assigned NULL values to missing demographic fields (gender, birth_year, bikeid) in 2020 data to preserve the integrity of the 2019 demographic data.
+  - Assigned NULL values to missing fields (gender, birth_year, bikeid) in 2020 data to preserve the integrity of the 2019 demographic data.
+  - Generated a new Primary Key column based on temporal ordering, this synchronizes data type because the original primary key has INT type in 2019 dataset and VARCHAR type in 2020_Q1.
 #### End-to-End Data Pipeline & Transformation Map
-<img width="3883" height="2708" alt="End-to-end Data Pipeline" src="https://github.com/user-attachments/assets/97bd18f3-b52c-4e88-988d-a70bd50ea3de" />
-
+<img width="3883" height="2708" alt="End-to-end Data Pipeline" src="https://github.com/user-attachments/assets/da55245e-e3bd-4a1a-b81a-b09c9d24dec5" />
 
 
 ### 4. Analyze & Share (Data Exploration and Visualization )
 #### Key Findings & Visualization:
-- **Usage Patterns:** Identified that Subscribers dominate weekday commute peaks (6–9 AM/4–6 PM), while casual riders spike on weekends, suggesting a shift from utility to recreation.\
+- **Usage Patterns:** Identified that "Subscriber" riders dominate weekday commute peaks (6–9 AM/4–6 PM), while "Customer" riders spike on weekends, this indicates that "Subscriber" riders use the service for utility purpose, while "Customer" riders use the service for recreation purpose..\
 ![Hourly Ride Volume By User Type](https://github.com/user-attachments/assets/7dddd3fa-5913-428d-80aa-d202db1aff6f)
 ![Days of Week&#39;s Ride Volume By User Type](https://github.com/user-attachments/assets/c256976a-af4f-4589-8cf5-6829227523ae)
-- **Duration Insights:** Casual riders averaged significantly higher trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
+- **Duration Insights:** "Customer" riders have significantly longer average trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.
 ![Average Trip Duration (Minutes) by User Type](https://github.com/user-attachments/assets/62967fb1-2dde-4806-a5a7-f39b6b729034)
 
-- **Seasonality:** Detected a sharp volume drop during winter, identifying a churn risk period.
+- **Seasonality:** Detected a sharp volume drop during winter, suggesting the weather affects the demand for services.
   ![Ride Volume by Seasonality (Quarterly)](https://github.com/user-attachments/assets/899cadd1-f771-41c5-b93e-d08ae48a3dbe)
 - **Top 10 highest ride volume station.**
 ![Top 10 Start Stations with highest volume of Customer Riders](https://github.com/user-attachments/assets/1256de70-059f-44be-b70d-755e0affe944)
