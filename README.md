@@ -53,13 +53,14 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
   - Performed a UNION ALL transformation to merge the quaterly tables into a single source of truth: gold.unified_divvy_trips.
   - Assigned NULL values to missing demographic fields (gender, birth_year, bikeid) in 2020 data to preserve the integrity of the 2019 demographic data.
 #### End-to-End Data Pipeline & Transformation Map
-<img width="3884" height="2546" alt="Data Flow Diagram" src="https://github.com/user-attachments/assets/610a7bb1-45f1-4fc7-8db7-8e44f760e533" />
+<img width="3883" height="2708" alt="End-to-end Data Pipeline" src="https://github.com/user-attachments/assets/97bd18f3-b52c-4e88-988d-a70bd50ea3de" />
+
 
 
 ### 4. Analyze & Share (Data Exploration and Visualization )
 #### Key Findings & Visualization:
 - **Usage Patterns:** Identified that Subscribers dominate weekday commute peaks (6–9 AM/4–6 PM), while casual riders spike on weekends, suggesting a shift from utility to recreation.\
-![Hourly Ride Volume By User Type](https://github.com/user-attachments/assets/2ad2bf80-ef6f-4f3c-80b3-d000481487e2)
+![Hourly Ride Volume By User Type](https://github.com/user-attachments/assets/7dddd3fa-5913-428d-80aa-d202db1aff6f)
 ![Days of Week&#39;s Ride Volume By User Type](https://github.com/user-attachments/assets/c256976a-af4f-4589-8cf5-6829227523ae)
 - **Duration Insights:** Casual riders averaged significantly higher trip durations, indicating "Subscriber” use the bikes for commuting (utility) while “Customer” use them for leisure.\
 ![Average Trip Duration (Minutes) by User Type](https://github.com/user-attachments/assets/62967fb1-2dde-4806-a5a7-f39b6b729034)
@@ -67,7 +68,7 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
 - **Seasonality:** Detected a sharp volume drop during winter, identifying a churn risk period.
   ![Ride Volume by Seasonality (Quarterly)](https://github.com/user-attachments/assets/899cadd1-f771-41c5-b93e-d08ae48a3dbe)
 - **Top 10 highest ride volume station.**
-![Top 10 Start Stations with highest volume of Customer Riders](https://github.com/user-attachments/assets/b6a09828-73c6-4a0b-8e1b-94cfbdd7aea0)
+![Top 10 Start Stations with highest volume of Customer Riders](https://github.com/user-attachments/assets/1256de70-059f-44be-b70d-755e0affe944)
 ### 5. Act (Strategic Recommendations)
 - **Targeted Geographic Marketing:** Focus efforts exclusively on the Top 10 stations most frequently by “Customer” riders. Install digital signage at these locations on weekends offering “First Month Free” trial.
 - **Seasonal/Weekend Membership Tiers:** Introduce a "Summer-Only" or "Weekend-Warrior" membership. This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
