@@ -1,4 +1,4 @@
-# Behavioral Analysis & Strategic Growth: Cyclistic Member Conversion
+# Cyclistic Bike-Share: Member Conversion Opportunity Analysis
 ## I. Overall
 ### 1. Problem:
 Analyzed 4.3M+ records of historical trip data to identify behavioral patterns distinguishing casual riders from annual members. The goal was to provide data-driven recommendations to convert casual users ("Customer") into long-term users ("Subscriber").
