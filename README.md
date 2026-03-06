@@ -73,7 +73,7 @@ Consolidate multiple datasets into a unified structure for longitudinal analysis
 - **Seasonal/Weekend Membership Tiers:** Introduce a "Summer-Only" or "Weekend-Warrior" membership. This caters to casual riders who use the service for recreation but may be intimidated by an annual commitment.
 - **Incentive-Based Digital Alerts:** Utilize the mobile app to trigger "Smart Alerts". If a casual rider exceeds a certain duration (e.g., 45 minutes), send a notification showing how much they would have saved on that specific trip with a membership.
 ## III. Datasets and Tools used:
-- **Datasets:** Download full dataset (100MB) at [Datasets](https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
+- **Datasets:** Download full dataset at [Datasets](https://github.com/Phuctran-81/bike-member-conversion-study/releases/tag/v1.0.0).
 - **Database:** SQL Server Management Studio 21.
 - **Data visualization:** Access the dashboard at [Tableau Public](https://public.tableau.com/views/Book1_17726930626510/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
